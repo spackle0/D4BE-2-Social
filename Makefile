@@ -1,5 +1,5 @@
-PROJECT_NAME=mysite
-APP_NAME=mysite
+PROJECT_NAME=bookmarks
+APP_NAME=account
 VERSION=0.1.0
 # For build process, minimum test coverage required to pass testing
 MIN_COVERAGE=0
@@ -47,8 +47,8 @@ dbmigrate:
 
 .PHONY: format
 format:
-	poetry run isort --skip migrations ${APP_NAME}
-	poetry run black --exclude="migrations/" ${APP_NAME}
+	poetry run isort --skip migrations ${PROJECT_NAME}
+	poetry run black --exclude="migrations/" ${PROJECT_NAME}
 
 .PHONY: sec
 sec:
