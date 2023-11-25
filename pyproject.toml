@@ -1,0 +1,46 @@
+[tool.ruff]
+line-length = 90
+
+[tool.black]
+line-length = 90
+
+[tool.isort]
+combine_as_imports=true
+combine_star=true
+skip_gitignore=true
+star_first=true
+
+[tool.pylint.basic]
+dostring-min-length=10
+
+[tool.pylint.design]
+exclude-too-few-public-methods=true
+
+[tool.pylint.format]
+max-line-length=90
+
+[tool.pytest]
+addopts="-ra --tb=short -v --capture=no --setup-show"
+
+[tool.poetry]
+name = "d4be-2-social"
+version = "0.1.0"
+description = ""
+authors = ["spackle0 <spackle0@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^4.2.7"
+python-decouple = "^3.8"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+isort = "^5.12.0"
+bump2version = "^1.0.1"
+pylint = "^3.0.2"
+ruff = "^0.1.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
