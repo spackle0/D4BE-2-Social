@@ -14,6 +14,10 @@ $(info ========================================)
 run:
 	poetry run python manage.py runserver
 
+.PHONE: run_plus
+run_plus:
+	poetry run python manage.py runserver_plus --cert-file cert.crt
+
 # Update semver per .bumpversion.cfg
 .PHONY: bump_major
 bump_major:

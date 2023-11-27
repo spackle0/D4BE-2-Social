@@ -1,5 +1,6 @@
-from django.contrib.auth.models import User
 from account.models import Profile
+from django.contrib.auth.models import User
+
 
 def create_profile(backend, user, *args, **kwargs):
     """
