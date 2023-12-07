@@ -5,6 +5,7 @@ from django.utils.text import slugify
 
 
 class Image(models.Model):
+    total_likes = models.PositiveIntegerField(default=0)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name="images_created", on_delete=models.CASCADE
     )
@@ -19,7 +20,10 @@ class Image(models.Model):
     )
 
     class Meta:
-        indexes = [models.Index(fields=["-created"])]
+        indexes = [
+            models.Index(fields=["-created"]),
+            models.Index(fields=["-total_likes"]),
+        ]
         ordering = ["-created"]
 
     def __str__(self):

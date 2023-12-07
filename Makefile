@@ -1,11 +1,9 @@
 PROJECT_NAME=bookmarks
-APP_NAME=account
 VERSION=0.1.0
 # For build process, minimum test coverage required to pass testing
 MIN_COVERAGE=0
 
 $(info ========================================)
-$(info App Name=${APP_NAME})
 $(info Version=${VERSION})
 $(info Min Test Coverage=${MIN_COVERAGE})
 $(info ========================================)
@@ -34,9 +32,9 @@ bump_patch:
 .PHONY: lint
 lint:
 	@echo "Flake8 running"
-	-poetry run flake8 ${APP_NAME}
+	-poetry run flake8 ${PROJECT_NAME}
 	@echo "Pylint running"
-	-poetry run pylint ${APP_NAME}
+	-poetry run pylint ${PROJECT_NAME}
 
 .PHONY: ruff
 ruff:
